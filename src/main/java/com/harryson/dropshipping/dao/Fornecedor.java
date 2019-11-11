@@ -12,7 +12,6 @@ public class Fornecedor {
 	@GeneratedValue
 	private Long id;
 	private String nome;
-	@JsonIgnore
 	private String token;
 	
 	public Long getId() {
@@ -27,6 +26,7 @@ public class Fornecedor {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	@JsonIgnore
 	public String getToken() {
 		return token;
 	}
