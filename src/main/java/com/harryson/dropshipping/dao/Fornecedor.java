@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Fornecedor {
@@ -12,6 +13,7 @@ public class Fornecedor {
 	@GeneratedValue
 	private Long id;
 	private String nome;
+	@JsonIgnore
 	private String token;
 	
 	public Long getId() {
@@ -30,6 +32,7 @@ public class Fornecedor {
 	public String getToken() {
 		return token;
 	}
+	@JsonProperty
 	public void setToken(String token) {
 		this.token = token;
 	}
