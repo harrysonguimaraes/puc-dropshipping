@@ -42,8 +42,10 @@ public class ProdutoController {
     	if (fornecedor != null) {
         	produto.setFornecedor(fornecedor);
         	return produtoRepository.save(produto);    		
+    	} else {
+        	throw new UnauthorizedException();
     	}
-    	throw new UnauthorizedException();
+
     }
 
 }
