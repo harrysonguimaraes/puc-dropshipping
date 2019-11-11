@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.harryson.dropshipping.dao.Fornecedor;
 import com.harryson.dropshipping.dao.Produto;
+import com.harryson.dropshipping.exception.UnauthorizedException;
 import com.harryson.dropshipping.repository.FornecedorRepository;
 import com.harryson.dropshipping.repository.ProdutoRepository;
 
@@ -38,8 +39,11 @@ public class ProdutoController {
     public Produto save(@RequestBody Produto produto, @RequestHeader(value="token")String token) {
     	
     	Fornecedor fornecedor = fornecedorRepository.findByToken(token);
-    	produto.setFornecedor(fornecedor);
-    	return produtoRepository.save(produto);
+    	if (fornecedor != null) {
+        	produto.setFornecedor(fornecedor);
+        	return produtoRepository.save(produto);    		
+    	}
+    	throw new UnauthorizedException();
     }
 
 }
