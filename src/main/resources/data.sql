@@ -1,7 +1,7 @@
 insert into usuario
-values(10001,'Harryson C. Guimarães', 'Rua Padre Severino, 274, São Pedro, Belo Horizonte');
+values(10001, 'Rua Padre Severino, 274, São Pedro, Belo Horizonte', 'Harryson C. Guimarães');
 insert into usuario
-values(10002,'Ricardo Magalhães', 'Rua Zilá Correa de araujo, 280, Centro, Campo Belo');
+values(10002, 'Rua Zilá Correa de araujo, 280, Centro, Campo Belo', 'Ricardo Magalhães');
 
 insert into fornecedor
 values(10001, 'Casas Bahia', 'BAHIA123456');
